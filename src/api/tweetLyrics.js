@@ -9,16 +9,16 @@ const queryString = unique(param.queryString.split(','))
 const bot = new Twit(config.twitterKeys)
 
 const tweetLyrics = () => {
- var day = new Date();
+ /*var day = new Date();
  var utc = day.getTime() - (day.getTimezoneOffset() * 60000);
  var nd = new Date(utc + (3600000*2)); // getting right time for Paris timezone
  var hours = nd.getHours();
   
  if (hours >= 7 || hours <= 1) // if time of day is between 1am and 7am, do not tweet
   {
-    console.log('Hour is: ' + hours + ', tweeting')
+    console.log('Hour is: ' + hours + ', tweeting')*/
     selectLine();
-  }
+  //}
 }
    
  function selectLine()   {

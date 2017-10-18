@@ -7,7 +7,5 @@ const config = require('./config')
 const bot = new Twit(config.twitterKeys)
 const tweetLyrics = require('./api/tweetLyrics')
 
-
-tweetLyrics()
 setInterval(tweetLyrics, config.twitterConfig.tweetInterval)
 
