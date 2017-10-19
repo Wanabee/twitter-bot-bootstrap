@@ -1,4 +1,5 @@
 [Refrain]
+[Refrain 2]
 [Couplet 1]
 [Couplet 2]
 [Couplet 3]

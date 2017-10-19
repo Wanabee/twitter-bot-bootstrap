@@ -17,11 +17,7 @@ const tweetLyrics = () => {
  if (hours >= 7 || hours <= 1) // if time of day is between 1am and 7am, do not tweet
   {
     console.log('Hour is: ' + hours + ', tweeting')*/
-    //selectLine();
-    console.log('starting select line process');
-    var data = fs.readFileSync('./src/tweetedLines.txt', 'utf8');
-    console.log(data);
-
+    selectLine();
   //}
 }
    
