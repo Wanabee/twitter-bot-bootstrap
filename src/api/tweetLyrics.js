@@ -17,6 +17,7 @@ const tweetLyrics = () => {
  if (hours >= 7 || hours <= 1) // if time of day is between 1am and 7am, do not tweet
   {
     console.log('Hour is: ' + hours + ', tweeting')*/
+    console.log('starting selectLine process');
     selectLine();
   //}
 }
