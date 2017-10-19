@@ -18,6 +18,7 @@ const tweetLyrics = () => {
   {
     console.log('Hour is: ' + hours + ', tweeting')*/
     //selectLine();
+    console.log('starting select line process');
     var data = fs.readFileSync('./src/tweetedLines.txt', 'utf8');
     console.log(data);
 
