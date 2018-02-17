@@ -170,7 +170,7 @@ QUERY_STRING=my super awesome query string!,google,android
 RANDOM_REPLY=Hi @${screenName} thanks for the follow! What are you working on today?|@${screenName} thanks for following! What are you working on today?
 
 RESULT_TYPE=mixed
-LANGUAGE=en
+TWITTER_LANG=en
 
 TWITTER_RETWEET_RATE=.1
 TWITTER_SEARCH_COUNT=20
@@ -203,7 +203,7 @@ QUERY_STRING=mango,horses,"donald -trump -duck"
 RANDOM_REPLY=Hi @${screenName} thanks for the follow! What are you working on today?,@${screenName} thanks for following! What are you working on today?
 
 RESULT_TYPE=mixed
-LANGUAGE=en
+TWITTER_LANG=en
 
 TWITTER_RETWEET_RATE=120
 TWITTER_SEARCH_COUNT=20
@@ -268,8 +268,6 @@ Credit for the inspiration for this should go to [@amanhimself](https://twitter.
 * [awesome-twitter-bots](https://github.com/amandeepmittal/awesome-twitter-bots)
 
 ---
-
-[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ## License
 
