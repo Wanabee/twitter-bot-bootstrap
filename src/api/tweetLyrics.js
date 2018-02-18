@@ -31,7 +31,7 @@ function selectLine() {
   console.log('Selected line: ' + selectedLine + ' - ' + Date(Date.now()).toLocaleString());
 
   if (selectedLine.length < 280 && checkIfAlreadyTweeted(selectedLine) !== true) {
-    var artist = selectedFile.split('-')[0].slice(0, -1);
+      var artist = selectedFile.split('-')[0].slice(0, -1).toLowerCase();
     var pictures = fs.readdirSync('./images/' + artist);
     var selectedPicture = './images/' + artist + '/' + pictures[Math.floor(Math.random() * pictures.length)];
     var b64content = fs.readFileSync(selectedPicture, { encoding: 'base64' })
