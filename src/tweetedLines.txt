@@ -3,9 +3,12 @@
 [Couplet 1]
 [Couplet 2]
 [Couplet 3]
+[Couplet]
 [Refrain] (x2)
+[Pré-refrain]
 [Pont]
 [Interlude]
 [Couplet unique]
+[Introduction]
 [Outro]
 

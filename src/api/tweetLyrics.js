@@ -31,17 +31,18 @@ function selectLine() {
   console.log('Selected line: ' + selectedLine + ' - ' + Date(Date.now()).toLocaleString());
 
   if (selectedLine.length < 280 && checkIfAlreadyTweeted(selectedLine) !== true) {
-    fs.appendFileSync('./src/tweetedLines.txt', selectedLine + ' | ' + selectedFile + '\n');
-    console.log('Saved new line! - ' + selectedLine + ' - ' + Date(Date.now()).toLocaleString());
     tweetNow(selectedLine);
     console.log('Tweeted: ' + selectedLine + ' - ' + Date(Date.now()).toLocaleString());
+    fs.appendFileSync('./src/tweetedLines.txt', selectedLine + ' | ' + selectedFile + '\n');
+    console.log('Saved new line! - ' + selectedLine + ' - ' + Date(Date.now()).toLocaleString());
+    
   }
   else {
     selectLine();
   }
 }
 
-function tweetNow(text) {
+function tweetNow(text, picture) {
   let tweet = {
     status: text
   }
