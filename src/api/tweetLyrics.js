@@ -31,27 +31,40 @@ function selectLine() {
   console.log('Selected line: ' + selectedLine + ' - ' + Date(Date.now()).toLocaleString());
 
   if (selectedLine.length < 280 && checkIfAlreadyTweeted(selectedLine) !== true) {
-    tweetNow(selectedLine);
+    var artist = selectedFile.split('-')[0].slice(0, -1);
+    var pictures = fs.readdirSync('./images/' + artist);
+    var selectedPicture = './images/' + artist + '/' + pictures[Math.floor(Math.random() * pictures.length)];
+    var b64content = fs.readFileSync(selectedPicture, { encoding: 'base64' })
+    tweetNow(selectedLine, b64content);
     console.log('Tweeted: ' + selectedLine + ' - ' + Date(Date.now()).toLocaleString());
     fs.appendFileSync('./src/tweetedLines.txt', selectedLine + ' | ' + selectedFile + '\n');
     console.log('Saved new line! - ' + selectedLine + ' - ' + Date(Date.now()).toLocaleString());
-    
+
   }
   else {
     selectLine();
   }
 }
 
-function tweetNow(text, picture) {
-  let tweet = {
-    status: text
-  }
+function tweetNow(text, b64content) {
+  // first we must post the media to Twitter
+  bot.post('media/upload', { media_data: b64content }, function (err, data, response) {
+    // now we can assign alt text to the media, for use by screen readers and
+    // other text-based presentations and interpreters
+    var mediaIdStr = data.media_id_string;
+    var altText = 'does it really matter';
+    var meta_params = { media_id: mediaIdStr, alt_text: { text: altText } }
 
-  bot.post('statuses/update', tweet, (err, data, response) => {
-    if (err) {
-      console.log('ERRORDERP Reply', err)
-    }
-    console.log('SUCCESS: Replied: ', text)
+    bot.post('media/metadata/create', meta_params, function (err, data, response) {
+      if (!err) {
+        // now we can reference the media and post a tweet (media will attach to the tweet)
+        var params = { status: text, media_ids: [mediaIdStr] }
+
+        bot.post('statuses/update', params, function (err, data, response) {
+          console.log('succesfully tweeted')
+        })
+      }
+    })
   })
 }
 
