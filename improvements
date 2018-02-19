@@ -1,3 +1,4 @@
 delete space at the end of the selected artist by removing all spaces and not 'deleting last character of the string'
 add cron tab to automatically start twitter bot after booting
 request twitter before tweeting to know if a tweet has been made in the last X minutes so that we don't spam the api and dont get banned
+add ssh server to be able to remotely connect
