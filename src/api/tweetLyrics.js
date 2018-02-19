@@ -27,7 +27,6 @@ function selectLine() {
   var lines = data.split('\n');
 
   selectedLine = lines[Math.floor(Math.random() * lines.length)];
-  selectedLine = selectedLine.slice(0, -1);
   console.log('Selected line: ' + selectedLine + ' - ' + Date(Date.now()).toLocaleString());
 
   if (selectedLine.length < 280 && checkIfAlreadyTweeted(selectedLine) !== true) {
