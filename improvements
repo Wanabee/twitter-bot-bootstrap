@@ -2,5 +2,5 @@ delete space at the end of the selected artist by removing all spaces and not 'd
 add cron tab to automatically start twitter bot after booting -- DONE
 request twitter before tweeting to know if a tweet has been made in the last X minutes so that we don't spam the api and dont get banned
 clean up tweetedLines.txt every month
-add ssh server to be able to remotely connect
-
+add ssh server to be able to remotely connect -- DONE
+configure router to be able to access raspberry pi from outside?
