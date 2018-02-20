@@ -4,3 +4,4 @@ request twitter before tweeting to know if a tweet has been made in the last X m
 clean up tweetedLines.txt every month
 add ssh server to be able to remotely connect -- DONE
 configure router to be able to access raspberry pi from outside?
+regroup split punchlines on a single line / replace commas with \n
