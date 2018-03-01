@@ -2,7 +2,6 @@ const Twit = require('twit')
 const unique = require('unique-random-array')
 const config = require('../config')
 const fs = require('fs');
-const isReply = require('../helpers/isReply')
 
 const param = config.twitterConfig
 const bot = new Twit(config.twitterKeys)
